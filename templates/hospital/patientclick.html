@@ -1,0 +1,57 @@
+{% extends 'hospital/homebase.html' %}
+
+{% block content %}
+
+<style>
+  .patient-hero {
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+    color: white;
+    border-radius: 15px;
+    padding: 50px 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .patient-hero h1 {
+    font-weight: 700;
+  }
+
+  .patient-hero p {
+    font-size: 1.1rem;
+  }
+
+  .patient-btn {
+    min-width: 160px;
+    border-radius: 30px;
+    font-weight: 600;
+    padding: 12px 20px;
+  }
+</style>
+
+<br><br>
+
+<div class="container">
+  <div class="patient-hero text-center">
+    <h1 class="display-5">Hello, Patient 🏥</h1>
+    <p class="mt-3">
+      Welcome to the <strong>Hospital Management System</strong><br>
+      Book appointments, manage your profile, and stay updated with your health records.
+    </p>
+
+    <hr class="bg-light my-4">
+
+    <p>You can access all patient features after login.</p>
+
+    <div class="mt-4">
+      <a class="btn btn-light btn-lg patient-btn me-2" href="/patientsignup">
+        <i class="fas fa-user-plus"></i> Register
+      </a>
+      <a class="btn btn-outline-light btn-lg patient-btn" href="/patientlogin">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+{% endblock content %}

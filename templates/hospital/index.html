@@ -1,0 +1,162 @@
+{% extends 'hospital/homebase.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+  <style>
+    body {
+      background-color: #f5fbff;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(
+          rgba(224, 247, 255, 0.85),
+          rgba(224, 247, 255, 0.85)
+        ),
+        url("{% static 'images/bg.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #0d6efd;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .hero .btn {
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      background: #ffffff;
+      padding: 60px 20px;
+    }
+
+    .about-section h2 {
+      color: #0d6efd;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .about-section p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* INFO CARDS */
+    .info-cards {
+      padding: 60px 20px;
+      background-color: #f0f9ff;
+    }
+
+    .info-card {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .info-card h4 {
+      color: #0d6efd;
+      margin-bottom: 15px;
+    }
+
+    .info-card p {
+      color: #555;
+    }
+  </style>
+</head>
+
+<!-- HERO SECTION -->
+<div class="hero">
+  <h1>Your Health, Our Priority</h1>
+  <p>
+    We provide trusted, compassionate, and advanced healthcare services with
+    modern facilities and experienced medical professionals.
+  </p>
+
+  <h4 class="mt-4">Need Immediate Care?</h4>
+
+  <a href="/patientclick" class="btn btn-primary mt-3">
+    Book an Appointment
+  </a>
+</div>
+
+<!-- ABOUT SECTION -->
+<div class="about-section">
+  <h2>About Our Hospital</h2>
+  <p>
+    Our Hospital Management System is designed to simplify and enhance patient
+    care by integrating doctors, patients, and administrators into one secure
+    and efficient platform. We are committed to providing high-quality medical
+    services, maintaining transparency, and ensuring patient satisfaction
+    through technology-driven healthcare solutions.
+  </p>
+</div>
+
+<!-- INFO CARDS -->
+<div class="container info-cards">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="info-card">
+        <h4>👨‍⚕️ Expert Doctors</h4>
+        <p>
+          Highly qualified and experienced doctors across multiple
+          specializations.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="info-card">
+        <h4>🏥 Modern Facilities</h4>
+        <p>
+          State-of-the-art infrastructure with advanced diagnostic and treatment
+          facilities.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="info-card">
+        <h4>📅 Easy Appointments</h4>
+        <p>
+          Hassle-free appointment booking and patient management system.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXISTING CARDS (ADMIN / DOCTOR / PATIENT) -->
+<div class="container my-5">
+  {% include "hospital/admin_doctor_patient_card.html" %}
+</div>
+
+{% endblock content %}

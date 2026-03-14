@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Feedback | Hospital Management System</title>
+
+  <style>
+    body {
+      background-color: #f5fbff;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(
+          rgba(224, 247, 255, 0.9),
+          rgba(224, 247, 255, 0.9)
+        ),
+        url("{% static 'images/bg.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0d6efd;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #333;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    /* FORM SECTION */
+    .form-section {
+      background: #ffffff;
+      padding: 60px 20px;
+    }
+
+    .feedback-card {
+      max-width: 650px;
+      margin: auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .feedback-card h3 {
+      text-align: center;
+      color: #0d6efd;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .feedback-card form h3 {
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .feedback-card input,
+    .feedback-card textarea,
+    .feedback-card select {
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .feedback-card input[type="submit"] {
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 30px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    /* INFO TEXT */
+    .info-text {
+      text-align: center;
+      color: #555;
+      margin-top: 25px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  {% include "hospital/navbar.html" %}
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>We Value Your Feedback</h1>
+    <p>
+      Your feedback helps us improve our services and provide better healthcare
+      experiences for everyone.
+    </p>
+  </div>
+
+  <!-- FEEDBACK FORM -->
+  <div class="form-section">
+    <div class="feedback-card">
+
+      <h3>Send Us Your Valuable Feedback</h3>
+
+      <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Send Message" class="btn btn-primary">
+      </form>
+
+      <div class="info-text">
+        Thank you for taking the time to share your thoughts with us 💙
+      </div>
+
+    </div>
+  </div>
+
+  {% include "hospital/footer.html" %}
+
+</body>
+</html>

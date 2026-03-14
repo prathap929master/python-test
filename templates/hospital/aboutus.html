@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Hospital Management System</title>
+
+  <style>
+    body {
+      background-color: #f5fbff;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(
+          rgba(224, 247, 255, 0.9),
+          rgba(224, 247, 255, 0.9)
+        ),
+        url("{% static 'images/bg.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0d6efd;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 850px;
+      margin: 20px auto;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 60px 20px;
+      background: #ffffff;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #0d6efd;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .section p {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* CARDS */
+    .info-cards {
+      background: #f0f9ff;
+      padding: 60px 20px;
+    }
+
+    .info-card {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .info-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .info-card h4 {
+      color: #0d6efd;
+      margin-bottom: 15px;
+    }
+
+    .info-card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* BUTTON */
+    .home-btn {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .home-btn a {
+      padding: 12px 35px;
+      font-size: 18px;
+      border-radius: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  {% include "hospital/navbar.html" %}
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>About Our Hospital</h1>
+    <p>
+      Dedicated to providing compassionate, high-quality healthcare through
+      technology, expertise, and patient-centered services.
+    </p>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <div class="section">
+    <h2>Who We Are</h2>
+    <p>
+      Our Hospital Management System is a comprehensive platform designed to
+      support hospital administrators, doctors, and patients in managing
+      healthcare services efficiently. We focus on improving hospital workflow,
+      reducing paperwork, and enhancing patient care using modern technology.
+    </p>
+  </div>
+
+  <!-- INFO CARDS -->
+  <div class="info-cards">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="info-card">
+            <h4>🏥 Our Mission</h4>
+            <p>
+              To deliver reliable, transparent, and efficient healthcare
+              management solutions that improve patient experience and medical
+              outcomes.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="info-card">
+            <h4>👨‍⚕️ Our Team</h4>
+            <p>
+              A dedicated team of healthcare professionals and administrators
+              working together to ensure smooth hospital operations.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="info-card">
+            <h4>💡 Our Technology</h4>
+            <p>
+              Secure, user-friendly, and scalable systems that simplify
+              appointments, records, and hospital management.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="home-btn">
+        <a href="/" class="btn btn-primary">Go to Home</a>
+      </div>
+
+    </div>
+  </div>
+
+  {% include "hospital/footer.html" %}
+
+</body>
+</html>

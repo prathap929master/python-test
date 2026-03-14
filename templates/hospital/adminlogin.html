@@ -1,0 +1,80 @@
+{% extends 'hospital/homebase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4ff;
+  }
+
+  .admin-hero {
+    background: linear-gradient(135deg, #6f42c1, #7952b3);
+    color: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    max-width: 500px;
+    margin: 80px auto;
+  }
+
+  .admin-hero h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-control {
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+  }
+
+  .btnSubmit {
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    width: 50%;
+    background: #0d6efd;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btnSubmit:hover {
+    background: #0b5ed7;
+  }
+
+  .text-center a {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .text-center a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="admin-hero">
+  <h2>Admin Login</h2>
+
+  <form method="post">
+    {% csrf_token %}
+
+    {% render_field form.username class="form-control" placeholder="Username" %}
+    {% render_field form.password class="form-control" placeholder="Password" %}
+
+    <div class="d-flex justify-content-center mt-3">
+      <button type="submit" class="btnSubmit">Login</button>
+    </div>
+
+    <div class="text-center mt-3">
+      Don't have an account? <a href="adminsignup">Signup here</a>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}
